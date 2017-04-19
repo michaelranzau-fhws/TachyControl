@@ -5,3 +5,5 @@ add Emgu.CV.UI.dll and Emgu.CV.World.dll to the referenced files.
 
 Because of ristrictions in publishing the native GeoCOM commands from Leica Geosystems, the TSControl library can only be hand
 over on demand. Please contact michael.ranzau@fhws.de to get full access to all needed files.
+
+More information will soon be available at geo.fhws.de/iats.html.
