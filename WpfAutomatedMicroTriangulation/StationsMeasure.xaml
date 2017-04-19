@@ -1,0 +1,51 @@
+﻿<Window x:Class="AutomatedMicroTriangulation.StationsMeasure"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:link="clr-namespace:TSControl;assembly=TachyControl"
+        xmlns:local="clr-namespace:AutomatedMicroTriangulation"
+        mc:Ignorable="d"
+        Title="StationsMeasure" Height="409.199" Width="300" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="dataFromCOMs"
+                    ObjectType="{x:Type link:TSControl}"
+                    MethodName="getCOMPorts" />
+
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Width="70">Target 1:</Label>
+                <ComboBox x:Name="cmbStationMeasureTarget1" 
+                          SelectedValue="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                          IsReadOnly="False" DisplayMemberPath="Name" 
+                          SelectedValuePath="ID" Width="100" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,0">
+                <Label Width="70">Target 2:</Label>
+                <ComboBox x:Name="cmbStationMeasureTarget2" 
+                          SelectedValue="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                          IsReadOnly="False" DisplayMemberPath="Name" 
+                          SelectedValuePath="ID" Width="100" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
+                <Label Width="70">Target 3:</Label>
+                <ComboBox x:Name="cmbStationMeasureTarget3" 
+                          SelectedValue="{Binding ID, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                          IsReadOnly="False" DisplayMemberPath="Name" 
+                          SelectedValuePath="ID" Width="100" />
+            </StackPanel>
+            <StackPanel x:Name="stpStationMeasureConPanel" Orientation="Vertical" Margin="5,5" HorizontalAlignment="Left">
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="70">COM:</Label>
+                    <ComboBox x:Name="cmbStationMeasureCOM" ItemsSource="{Binding Source={StaticResource dataFromCOMs}}"
+                              Width="100" SelectionChanged="cmbStationMeasureCOM_SelectionChanged" />
+                </StackPanel>
+             </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Button x:Name="btnStationMeasureMeasure" Click="btnStationMeasureMeasure_Click">Do measure</Button>     
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

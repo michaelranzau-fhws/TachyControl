@@ -1,0 +1,29 @@
+﻿<Window x:Class="AutomatedMicroTriangulation.MConceptPauseEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutomatedMicroTriangulation"
+        mc:Ignorable="d"
+        Title="Pause - Edit" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel>
+            <StackPanel Margin="13,0,0,0" DockPanel.Dock="Top">
+                <RadioButton GroupName="rbtPause" IsChecked="True">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Width="70">Delay [h]:</Label>
+                        <TextBox Width="80" Height="20" VerticalContentAlignment="Center">0:30</TextBox>
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton GroupName="rbtPause">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Width="70">Start at [h]:</Label>
+                        <TextBox Width="80" Height="20" VerticalContentAlignment="Center">14:30</TextBox>
+                        <Label>(0:00 - 23:59)</Label>
+                    </StackPanel>
+                </RadioButton>
+            </StackPanel>
+            <Grid DockPanel.Dock="Top"></Grid>
+        </DockPanel>
+    </Grid>
+</Window>

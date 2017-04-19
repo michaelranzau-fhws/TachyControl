@@ -1,0 +1,2 @@
+C:\Arbeit\GitHub\TachyControl\FeatureDetection\bin\Release\FeatureDetection.dll
+C:\Arbeit\GitHub\TachyControl\FeatureDetection\obj\Release\FeatureDetection.dll
